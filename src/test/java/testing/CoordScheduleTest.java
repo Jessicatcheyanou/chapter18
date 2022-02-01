@@ -13,6 +13,6 @@ public class CoordScheduleTest {
                "2020-12-30T05:15Z",
                60);
 
-        Assertions.assertTrue(schedule.getFrequency() < 1440);
+        Assertions.assertTrue(schedule.getFrequency() < 40);
     }
 }
