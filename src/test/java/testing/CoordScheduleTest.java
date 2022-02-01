@@ -13,6 +13,9 @@ public class CoordScheduleTest {
                "2020-12-30T05:15Z",
                60);
 
-        Assertions.assertTrue(schedule.getFrequency() < 40);
+       int frequency = schedule.getFrequency();
+
+        Assertions.assertTrue(frequency < CoordSchedule.MAX_FREQUENCY);
+        Assertions.assertTrue(frequency > CoordSchedule.MIN_FREQUENCY);
     }
 }
