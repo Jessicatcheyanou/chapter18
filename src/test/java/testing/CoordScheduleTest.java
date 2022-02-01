@@ -34,4 +34,22 @@ public class CoordScheduleTest {
         //Timestamp is not formatted properly.
         Assertions.assertNull(starting);
     }
+
+    @Test
+    @DisplayName("Ending timestamp must be after staring timestamp")
+    void testTimestamps(){
+        CoordSchedule schedule = new CoordSchedule(
+                "2020-12-15T15:32Z",
+                "2020-12-15T15:35Z",
+                60);
+
+        Date starting = schedule.getStartingTimestampAsDate();
+        Assertions.assertNotNull(starting);
+
+        Date ending = schedule.getEndingTimestampAsDate();
+        Assertions.assertNotNull(ending);
+
+        Assertions.assertTrue(ending.after(starting));
+
+    }
 }
